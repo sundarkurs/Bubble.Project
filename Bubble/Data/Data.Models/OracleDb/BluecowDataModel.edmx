@@ -1,0 +1,433 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Model.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="12.2" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="PASSENGER">
+          <Key>
+            <PropertyRef Name="PAX_ID" />
+          </Key>
+          <Property Name="PAX_ID" Type="number" Precision="8" Scale="0" Nullable="false" />
+          <Property Name="PERSON_TITLE" Type="varchar2" MaxLength="10" />
+          <Property Name="FAMILY_NAME" Type="varchar2" MaxLength="30" />
+          <Property Name="FIRST_NAME" Type="varchar2" MaxLength="30" />
+          <Property Name="MIDDLE_NAME" Type="varchar2" MaxLength="30" />
+          <Property Name="GENDER" Type="varchar2" MaxLength="1" />
+          <Property Name="DOB" Type="date" />
+          <Property Name="JOURNEYS_CLUB_ID" Type="number" Precision="8" Scale="0" />
+          <Property Name="PSPT_NATIONALITY" Type="varchar2" MaxLength="2" />
+          <Property Name="PSPT_NO" Type="varchar2" MaxLength="20" />
+          <Property Name="PSPT_ISS_DATE" Type="date" />
+          <Property Name="PSPT_EXP_DATE" Type="date" />
+          <Property Name="EMG_NAME" Type="varchar2" MaxLength="30" />
+          <Property Name="EMG_RELATION" Type="varchar2" MaxLength="30" />
+          <Property Name="EMG_PHONE_NO" Type="varchar2" MaxLength="20" />
+          <Property Name="INS_NAME" Type="varchar2" MaxLength="80" />
+          <Property Name="INS_POLICY_NO" Type="varchar2" MaxLength="20" />
+          <Property Name="INS_PHONE_NO" Type="varchar2" MaxLength="20" />
+          <Property Name="PHONE_NO" Type="varchar2" MaxLength="20" />
+          <Property Name="SPECIAL_NEED" Type="varchar2" MaxLength="30" />
+          <Property Name="PSPT_BIRTH_PLACE" Type="varchar2" MaxLength="30" />
+          <Property Name="OTC_PH_COUNTRY" Type="varchar2" MaxLength="3" />
+          <Property Name="OTC_PH_LOCAL" Type="varchar2" MaxLength="15" />
+          <Property Name="OTC_EMAIL" Type="varchar2" MaxLength="80" />
+          <Property Name="EMG_STATUS" Type="varchar2" MaxLength="1" />
+          <Property Name="EMG_DATE" Type="date" />
+          <Property Name="EMG_PH_COUNTRY" Type="varchar2" MaxLength="3" />
+          <Property Name="EMG_PH_LOCAL" Type="varchar2" MaxLength="15" />
+          <Property Name="OTC_STATUS" Type="varchar2" MaxLength="1" />
+          <Property Name="OTC_DATE" Type="date" />
+          <Property Name="OTC_SUPPLIED" Type="varchar2" MaxLength="1" />
+          <Property Name="GIVEN_NAME" Type="varchar2" MaxLength="30" />
+          <Property Name="EMG_PH_AREA" Type="varchar2" MaxLength="3" />
+          <Property Name="OTC_PH_AREA" Type="varchar2" MaxLength="3" />
+          <Property Name="INS_PH_COUNTRY" Type="varchar2" MaxLength="3" />
+          <Property Name="INS_PH_AREA" Type="varchar2" MaxLength="3" />
+          <Property Name="INS_PH_LOCAL" Type="varchar2" MaxLength="15" />
+          <Property Name="MODIFIED_DATE" Type="date" />
+          <Property Name="UNIQUE_STATUS" Type="varchar2" MaxLength="1" />
+          <Property Name="PRIM_PAX_ID" Type="number" Precision="8" Scale="0" />
+          <Property Name="TOUR_COUNT" Type="number" Precision="3" Scale="0" />
+          <Property Name="JC_STATUS" Type="varchar2" MaxLength="1" />
+          <Property Name="JC_DATE" Type="date" />
+          <Property Name="PSPT_ISS_AUTH" Type="varchar2" MaxLength="30" />
+          <Property Name="PSN_PHONE" Type="varchar2" MaxLength="15" />
+          <Property Name="PSN_EMAIL" Type="varchar2" MaxLength="80" />
+          <Property Name="ADDR_STATUS" Type="varchar2" MaxLength="1" />
+          <Property Name="ADDR_DATE" Type="date" />
+          <Property Name="ADDR_STREET" Type="varchar2" MaxLength="100" />
+          <Property Name="ADDR_LOCALITY" Type="varchar2" MaxLength="30" />
+          <Property Name="ADDR_STATE" Type="varchar2" MaxLength="20" />
+          <Property Name="ADDR_POSTCODE" Type="varchar2" MaxLength="10" />
+          <Property Name="ADDR_COUNTRY" Type="varchar2" MaxLength="50" />
+          <Property Name="PAX_UPDATE_DATE" Type="date" />
+          <Property Name="PSN_PH_COUNTRY" Type="varchar2" MaxLength="3" />
+          <Property Name="PSN_PH_LOCAL" Type="varchar2" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="PASSENGER1">
+          <Key>
+            <PropertyRef Name="PAX_ID" />
+          </Key>
+          <Property Name="PAX_ID" Type="number" Precision="8" Scale="0" Nullable="false" />
+          <Property Name="PERSON_TITLE" Type="varchar2" MaxLength="10" />
+          <Property Name="FAMILY_NAME" Type="varchar2" MaxLength="30" />
+          <Property Name="FIRST_NAME" Type="varchar2" MaxLength="30" />
+          <Property Name="MIDDLE_NAME" Type="varchar2" MaxLength="30" />
+          <Property Name="GENDER" Type="varchar2" MaxLength="1" />
+          <Property Name="DOB" Type="date" />
+          <Property Name="JOURNEYS_CLUB_ID" Type="number" Precision="8" Scale="0" />
+          <Property Name="PSPT_NATIONALITY" Type="varchar2" MaxLength="2" />
+          <Property Name="PSPT_NO" Type="varchar2" MaxLength="20" />
+          <Property Name="PSPT_ISS_DATE" Type="date" />
+          <Property Name="PSPT_EXP_DATE" Type="date" />
+          <Property Name="EMG_NAME" Type="varchar2" MaxLength="30" />
+          <Property Name="EMG_RELATION" Type="varchar2" MaxLength="30" />
+          <Property Name="EMG_PHONE_NO" Type="varchar2" MaxLength="20" />
+          <Property Name="INS_NAME" Type="varchar2" MaxLength="80" />
+          <Property Name="INS_POLICY_NO" Type="varchar2" MaxLength="20" />
+          <Property Name="INS_PHONE_NO" Type="varchar2" MaxLength="20" />
+          <Property Name="PHONE_NO" Type="varchar2" MaxLength="20" />
+          <Property Name="SPECIAL_NEED" Type="varchar2" MaxLength="30" />
+          <Property Name="MEDICATION" Type="varchar2" MaxLength="100" />
+          <Property Name="PSPT_BIRTH_PLACE" Type="varchar2" MaxLength="30" />
+          <Property Name="OTC_SUPPLIED" Type="varchar2" MaxLength="1" />
+          <Property Name="OTC_PH_COUNTRY" Type="varchar2" MaxLength="3" />
+          <Property Name="OTC_PH_LOCAL" Type="varchar2" MaxLength="15" />
+          <Property Name="OTC_EMAIL" Type="varchar2" MaxLength="80" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'CT_APPLICATIONS.PENDING_CHANGES' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="PENDING_CHANGES">
+          <Key>
+            <PropertyRef Name="PAX_ID" />
+            <PropertyRef Name="SEASON" />
+            <PropertyRef Name="BOOKING_NO" />
+            <PropertyRef Name="COMPONENT_NO" />
+            <PropertyRef Name="PROD_CODE" />
+            <PropertyRef Name="AGENCY_NO" />
+            <PropertyRef Name="CONSULT_NO" />
+            <PropertyRef Name="MARKET_ID" />
+          </Key>
+          <Property Name="PAX_ID" Type="number" Precision="8" Scale="0" Nullable="false" />
+          <Property Name="SEASON" Type="number" Precision="4" Scale="0" Nullable="false" />
+          <Property Name="BOOKING_NO" Type="number" Precision="6" Scale="0" Nullable="false" />
+          <Property Name="COMPONENT_NO" Type="number" Precision="6" Scale="0" Nullable="false" />
+          <Property Name="FIRST_NAME" Type="varchar2" MaxLength="30" />
+          <Property Name="FAMILY_NAME" Type="varchar2" MaxLength="30" />
+          <Property Name="BOOKING_USER_FIELD_1" Type="varchar2" MaxLength="10" />
+          <Property Name="BOOKING_USER_FIELD_2" Type="varchar2" MaxLength="10" />
+          <Property Name="BOOKING_USER_FIELD_3" Type="varchar2" MaxLength="10" />
+          <Property Name="PROD_CODE" Type="varchar2" MaxLength="10" Nullable="false" />
+          <Property Name="TOUR_CODE" Type="varchar2" MaxLength="10" />
+          <Property Name="COACH" Type="varchar2" MaxLength="3" />
+          <Property Name="DEPARTURE" Type="date" />
+          <Property Name="AGENCY_NO" Type="number" Precision="6" Scale="0" Nullable="false" />
+          <Property Name="CONSULT_NO" Type="number" Precision="8" Scale="0" Nullable="false" />
+          <Property Name="CONTACT_ACCOUNT_USER_ID" Type="number" Precision="8" Scale="0" />
+          <Property Name="MARKET_ID" Type="varchar2" MaxLength="3" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="ModelStoreContainer">
+          <EntitySet Name="PASSENGER" EntityType="Self.PASSENGER" Schema="CT_BOOKINGS" store:Type="Tables" />
+          <EntitySet Name="PASSENGER1" EntityType="Self.PASSENGER1" Schema="CT_PASSENGERS" Table="PASSENGER" store:Type="Tables" />
+          <EntitySet Name="PENDING_CHANGES" EntityType="Self.PENDING_CHANGES" store:Type="Views" store:Schema="CT_APPLICATIONS">
+            <DefiningQuery>SELECT 
+"PENDING_CHANGES"."PAX_ID" AS "PAX_ID", 
+"PENDING_CHANGES"."SEASON" AS "SEASON", 
+"PENDING_CHANGES"."BOOKING_NO" AS "BOOKING_NO", 
+"PENDING_CHANGES"."COMPONENT_NO" AS "COMPONENT_NO", 
+"PENDING_CHANGES"."FIRST_NAME" AS "FIRST_NAME", 
+"PENDING_CHANGES"."FAMILY_NAME" AS "FAMILY_NAME", 
+"PENDING_CHANGES"."BOOKING_USER_FIELD_1" AS "BOOKING_USER_FIELD_1", 
+"PENDING_CHANGES"."BOOKING_USER_FIELD_2" AS "BOOKING_USER_FIELD_2", 
+"PENDING_CHANGES"."BOOKING_USER_FIELD_3" AS "BOOKING_USER_FIELD_3", 
+"PENDING_CHANGES"."PROD_CODE" AS "PROD_CODE", 
+"PENDING_CHANGES"."TOUR_CODE" AS "TOUR_CODE", 
+"PENDING_CHANGES"."COACH" AS "COACH", 
+"PENDING_CHANGES"."DEPARTURE" AS "DEPARTURE", 
+"PENDING_CHANGES"."AGENCY_NO" AS "AGENCY_NO", 
+"PENDING_CHANGES"."CONSULT_NO" AS "CONSULT_NO", 
+"PENDING_CHANGES"."CONTACT_ACCOUNT_USER_ID" AS "CONTACT_ACCOUNT_USER_ID", 
+"PENDING_CHANGES"."MARKET_ID" AS "MARKET_ID"
+FROM "CT_APPLICATIONS"."PENDING_CHANGES" "PENDING_CHANGES"</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="PASSENGER">
+          <Key>
+            <PropertyRef Name="PAX_ID" />
+          </Key>
+          <Property Name="PAX_ID" Type="Int32" Nullable="false" />
+          <Property Name="PERSON_TITLE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="FAMILY_NAME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="FIRST_NAME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="MIDDLE_NAME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="GENDER" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="DOB" Type="DateTime" />
+          <Property Name="JOURNEYS_CLUB_ID" Type="Int32" />
+          <Property Name="PSPT_NATIONALITY" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="PSPT_NO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="PSPT_ISS_DATE" Type="DateTime" />
+          <Property Name="PSPT_EXP_DATE" Type="DateTime" />
+          <Property Name="EMG_NAME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="EMG_RELATION" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="EMG_PHONE_NO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="INS_NAME" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="INS_POLICY_NO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="INS_PHONE_NO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="PHONE_NO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="SPECIAL_NEED" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="PSPT_BIRTH_PLACE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="OTC_PH_COUNTRY" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="OTC_PH_LOCAL" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="OTC_EMAIL" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="EMG_STATUS" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="EMG_DATE" Type="DateTime" />
+          <Property Name="EMG_PH_COUNTRY" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="EMG_PH_LOCAL" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="OTC_STATUS" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="OTC_DATE" Type="DateTime" />
+          <Property Name="OTC_SUPPLIED" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="GIVEN_NAME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="EMG_PH_AREA" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="OTC_PH_AREA" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="INS_PH_COUNTRY" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="INS_PH_AREA" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="INS_PH_LOCAL" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="MODIFIED_DATE" Type="DateTime" />
+          <Property Name="UNIQUE_STATUS" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="PRIM_PAX_ID" Type="Int32" />
+          <Property Name="TOUR_COUNT" Type="Int16" />
+          <Property Name="JC_STATUS" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="JC_DATE" Type="DateTime" />
+          <Property Name="PSPT_ISS_AUTH" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="PSN_PHONE" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="PSN_EMAIL" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="ADDR_STATUS" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="ADDR_DATE" Type="DateTime" />
+          <Property Name="ADDR_STREET" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ADDR_LOCALITY" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="ADDR_STATE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ADDR_POSTCODE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="ADDR_COUNTRY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PAX_UPDATE_DATE" Type="DateTime" />
+          <Property Name="PSN_PH_COUNTRY" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="PSN_PH_LOCAL" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="PASSENGER1">
+          <Key>
+            <PropertyRef Name="PAX_ID" />
+          </Key>
+          <Property Name="PAX_ID" Type="Int32" Nullable="false" />
+          <Property Name="PERSON_TITLE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="FAMILY_NAME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="FIRST_NAME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="MIDDLE_NAME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="GENDER" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="DOB" Type="DateTime" />
+          <Property Name="JOURNEYS_CLUB_ID" Type="Int32" />
+          <Property Name="PSPT_NATIONALITY" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="PSPT_NO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="PSPT_ISS_DATE" Type="DateTime" />
+          <Property Name="PSPT_EXP_DATE" Type="DateTime" />
+          <Property Name="EMG_NAME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="EMG_RELATION" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="EMG_PHONE_NO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="INS_NAME" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="INS_POLICY_NO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="INS_PHONE_NO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="PHONE_NO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="SPECIAL_NEED" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="MEDICATION" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PSPT_BIRTH_PLACE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="OTC_SUPPLIED" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="OTC_PH_COUNTRY" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="OTC_PH_LOCAL" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="OTC_EMAIL" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="PENDING_CHANGES">
+          <Key>
+            <PropertyRef Name="PAX_ID" />
+            <PropertyRef Name="SEASON" />
+            <PropertyRef Name="BOOKING_NO" />
+            <PropertyRef Name="COMPONENT_NO" />
+            <PropertyRef Name="PROD_CODE" />
+            <PropertyRef Name="AGENCY_NO" />
+            <PropertyRef Name="CONSULT_NO" />
+            <PropertyRef Name="MARKET_ID" />
+          </Key>
+          <Property Name="PAX_ID" Type="Int32" Nullable="false" />
+          <Property Name="SEASON" Type="Int16" Nullable="false" />
+          <Property Name="BOOKING_NO" Type="Int32" Nullable="false" />
+          <Property Name="COMPONENT_NO" Type="Int32" Nullable="false" />
+          <Property Name="FIRST_NAME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="FAMILY_NAME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="BOOKING_USER_FIELD_1" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="BOOKING_USER_FIELD_2" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="BOOKING_USER_FIELD_3" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="PROD_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TOUR_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="COACH" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="DEPARTURE" Type="DateTime" />
+          <Property Name="AGENCY_NO" Type="Int32" Nullable="false" />
+          <Property Name="CONSULT_NO" Type="Int32" Nullable="false" />
+          <Property Name="CONTACT_ACCOUNT_USER_ID" Type="Int32" />
+          <Property Name="MARKET_ID" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="BluecowEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="PASSENGERs" EntityType="Self.PASSENGER" />
+          <EntitySet Name="PASSENGER1" EntityType="Self.PASSENGER1" />
+          <EntitySet Name="PENDING_CHANGES" EntityType="Self.PENDING_CHANGES" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="BluecowEntities">
+          <EntitySetMapping Name="PASSENGERs">
+            <EntityTypeMapping TypeName="Model.PASSENGER">
+              <MappingFragment StoreEntitySet="PASSENGER">
+                <ScalarProperty Name="PAX_ID" ColumnName="PAX_ID" />
+                <ScalarProperty Name="PERSON_TITLE" ColumnName="PERSON_TITLE" />
+                <ScalarProperty Name="FAMILY_NAME" ColumnName="FAMILY_NAME" />
+                <ScalarProperty Name="FIRST_NAME" ColumnName="FIRST_NAME" />
+                <ScalarProperty Name="MIDDLE_NAME" ColumnName="MIDDLE_NAME" />
+                <ScalarProperty Name="GENDER" ColumnName="GENDER" />
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
+                <ScalarProperty Name="JOURNEYS_CLUB_ID" ColumnName="JOURNEYS_CLUB_ID" />
+                <ScalarProperty Name="PSPT_NATIONALITY" ColumnName="PSPT_NATIONALITY" />
+                <ScalarProperty Name="PSPT_NO" ColumnName="PSPT_NO" />
+                <ScalarProperty Name="PSPT_ISS_DATE" ColumnName="PSPT_ISS_DATE" />
+                <ScalarProperty Name="PSPT_EXP_DATE" ColumnName="PSPT_EXP_DATE" />
+                <ScalarProperty Name="EMG_NAME" ColumnName="EMG_NAME" />
+                <ScalarProperty Name="EMG_RELATION" ColumnName="EMG_RELATION" />
+                <ScalarProperty Name="EMG_PHONE_NO" ColumnName="EMG_PHONE_NO" />
+                <ScalarProperty Name="INS_NAME" ColumnName="INS_NAME" />
+                <ScalarProperty Name="INS_POLICY_NO" ColumnName="INS_POLICY_NO" />
+                <ScalarProperty Name="INS_PHONE_NO" ColumnName="INS_PHONE_NO" />
+                <ScalarProperty Name="PHONE_NO" ColumnName="PHONE_NO" />
+                <ScalarProperty Name="SPECIAL_NEED" ColumnName="SPECIAL_NEED" />
+                <ScalarProperty Name="PSPT_BIRTH_PLACE" ColumnName="PSPT_BIRTH_PLACE" />
+                <ScalarProperty Name="OTC_PH_COUNTRY" ColumnName="OTC_PH_COUNTRY" />
+                <ScalarProperty Name="OTC_PH_LOCAL" ColumnName="OTC_PH_LOCAL" />
+                <ScalarProperty Name="OTC_EMAIL" ColumnName="OTC_EMAIL" />
+                <ScalarProperty Name="EMG_STATUS" ColumnName="EMG_STATUS" />
+                <ScalarProperty Name="EMG_DATE" ColumnName="EMG_DATE" />
+                <ScalarProperty Name="EMG_PH_COUNTRY" ColumnName="EMG_PH_COUNTRY" />
+                <ScalarProperty Name="EMG_PH_LOCAL" ColumnName="EMG_PH_LOCAL" />
+                <ScalarProperty Name="OTC_STATUS" ColumnName="OTC_STATUS" />
+                <ScalarProperty Name="OTC_DATE" ColumnName="OTC_DATE" />
+                <ScalarProperty Name="OTC_SUPPLIED" ColumnName="OTC_SUPPLIED" />
+                <ScalarProperty Name="GIVEN_NAME" ColumnName="GIVEN_NAME" />
+                <ScalarProperty Name="EMG_PH_AREA" ColumnName="EMG_PH_AREA" />
+                <ScalarProperty Name="OTC_PH_AREA" ColumnName="OTC_PH_AREA" />
+                <ScalarProperty Name="INS_PH_COUNTRY" ColumnName="INS_PH_COUNTRY" />
+                <ScalarProperty Name="INS_PH_AREA" ColumnName="INS_PH_AREA" />
+                <ScalarProperty Name="INS_PH_LOCAL" ColumnName="INS_PH_LOCAL" />
+                <ScalarProperty Name="MODIFIED_DATE" ColumnName="MODIFIED_DATE" />
+                <ScalarProperty Name="UNIQUE_STATUS" ColumnName="UNIQUE_STATUS" />
+                <ScalarProperty Name="PRIM_PAX_ID" ColumnName="PRIM_PAX_ID" />
+                <ScalarProperty Name="TOUR_COUNT" ColumnName="TOUR_COUNT" />
+                <ScalarProperty Name="JC_STATUS" ColumnName="JC_STATUS" />
+                <ScalarProperty Name="JC_DATE" ColumnName="JC_DATE" />
+                <ScalarProperty Name="PSPT_ISS_AUTH" ColumnName="PSPT_ISS_AUTH" />
+                <ScalarProperty Name="PSN_PHONE" ColumnName="PSN_PHONE" />
+                <ScalarProperty Name="PSN_EMAIL" ColumnName="PSN_EMAIL" />
+                <ScalarProperty Name="ADDR_STATUS" ColumnName="ADDR_STATUS" />
+                <ScalarProperty Name="ADDR_DATE" ColumnName="ADDR_DATE" />
+                <ScalarProperty Name="ADDR_STREET" ColumnName="ADDR_STREET" />
+                <ScalarProperty Name="ADDR_LOCALITY" ColumnName="ADDR_LOCALITY" />
+                <ScalarProperty Name="ADDR_STATE" ColumnName="ADDR_STATE" />
+                <ScalarProperty Name="ADDR_POSTCODE" ColumnName="ADDR_POSTCODE" />
+                <ScalarProperty Name="ADDR_COUNTRY" ColumnName="ADDR_COUNTRY" />
+                <ScalarProperty Name="PAX_UPDATE_DATE" ColumnName="PAX_UPDATE_DATE" />
+                <ScalarProperty Name="PSN_PH_COUNTRY" ColumnName="PSN_PH_COUNTRY" />
+                <ScalarProperty Name="PSN_PH_LOCAL" ColumnName="PSN_PH_LOCAL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PASSENGER1">
+            <EntityTypeMapping TypeName="Model.PASSENGER1">
+              <MappingFragment StoreEntitySet="PASSENGER1">
+                <ScalarProperty Name="PAX_ID" ColumnName="PAX_ID" />
+                <ScalarProperty Name="PERSON_TITLE" ColumnName="PERSON_TITLE" />
+                <ScalarProperty Name="FAMILY_NAME" ColumnName="FAMILY_NAME" />
+                <ScalarProperty Name="FIRST_NAME" ColumnName="FIRST_NAME" />
+                <ScalarProperty Name="MIDDLE_NAME" ColumnName="MIDDLE_NAME" />
+                <ScalarProperty Name="GENDER" ColumnName="GENDER" />
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
+                <ScalarProperty Name="JOURNEYS_CLUB_ID" ColumnName="JOURNEYS_CLUB_ID" />
+                <ScalarProperty Name="PSPT_NATIONALITY" ColumnName="PSPT_NATIONALITY" />
+                <ScalarProperty Name="PSPT_NO" ColumnName="PSPT_NO" />
+                <ScalarProperty Name="PSPT_ISS_DATE" ColumnName="PSPT_ISS_DATE" />
+                <ScalarProperty Name="PSPT_EXP_DATE" ColumnName="PSPT_EXP_DATE" />
+                <ScalarProperty Name="EMG_NAME" ColumnName="EMG_NAME" />
+                <ScalarProperty Name="EMG_RELATION" ColumnName="EMG_RELATION" />
+                <ScalarProperty Name="EMG_PHONE_NO" ColumnName="EMG_PHONE_NO" />
+                <ScalarProperty Name="INS_NAME" ColumnName="INS_NAME" />
+                <ScalarProperty Name="INS_POLICY_NO" ColumnName="INS_POLICY_NO" />
+                <ScalarProperty Name="INS_PHONE_NO" ColumnName="INS_PHONE_NO" />
+                <ScalarProperty Name="PHONE_NO" ColumnName="PHONE_NO" />
+                <ScalarProperty Name="SPECIAL_NEED" ColumnName="SPECIAL_NEED" />
+                <ScalarProperty Name="MEDICATION" ColumnName="MEDICATION" />
+                <ScalarProperty Name="PSPT_BIRTH_PLACE" ColumnName="PSPT_BIRTH_PLACE" />
+                <ScalarProperty Name="OTC_SUPPLIED" ColumnName="OTC_SUPPLIED" />
+                <ScalarProperty Name="OTC_PH_COUNTRY" ColumnName="OTC_PH_COUNTRY" />
+                <ScalarProperty Name="OTC_PH_LOCAL" ColumnName="OTC_PH_LOCAL" />
+                <ScalarProperty Name="OTC_EMAIL" ColumnName="OTC_EMAIL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PENDING_CHANGES">
+            <EntityTypeMapping TypeName="Model.PENDING_CHANGES">
+              <MappingFragment StoreEntitySet="PENDING_CHANGES">
+                <ScalarProperty Name="PAX_ID" ColumnName="PAX_ID" />
+                <ScalarProperty Name="SEASON" ColumnName="SEASON" />
+                <ScalarProperty Name="BOOKING_NO" ColumnName="BOOKING_NO" />
+                <ScalarProperty Name="COMPONENT_NO" ColumnName="COMPONENT_NO" />
+                <ScalarProperty Name="FIRST_NAME" ColumnName="FIRST_NAME" />
+                <ScalarProperty Name="FAMILY_NAME" ColumnName="FAMILY_NAME" />
+                <ScalarProperty Name="BOOKING_USER_FIELD_1" ColumnName="BOOKING_USER_FIELD_1" />
+                <ScalarProperty Name="BOOKING_USER_FIELD_2" ColumnName="BOOKING_USER_FIELD_2" />
+                <ScalarProperty Name="BOOKING_USER_FIELD_3" ColumnName="BOOKING_USER_FIELD_3" />
+                <ScalarProperty Name="PROD_CODE" ColumnName="PROD_CODE" />
+                <ScalarProperty Name="TOUR_CODE" ColumnName="TOUR_CODE" />
+                <ScalarProperty Name="COACH" ColumnName="COACH" />
+                <ScalarProperty Name="DEPARTURE" ColumnName="DEPARTURE" />
+                <ScalarProperty Name="AGENCY_NO" ColumnName="AGENCY_NO" />
+                <ScalarProperty Name="CONSULT_NO" ColumnName="CONSULT_NO" />
+                <ScalarProperty Name="CONTACT_ACCOUNT_USER_ID" ColumnName="CONTACT_ACCOUNT_USER_ID" />
+                <ScalarProperty Name="MARKET_ID" ColumnName="MARKET_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
