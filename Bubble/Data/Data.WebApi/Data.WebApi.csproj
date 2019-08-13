@@ -262,6 +262,10 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Framework\Framework.Core\Framework.Core.csproj">
+      <Project>{1c53b9ca-7b69-45a8-b802-de02b91ef5f4}</Project>
+      <Name>Framework.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Data.ClientModels\Data.ClientModels.csproj">
       <Project>{9172d6b2-2771-4b53-a5e1-58760c1932f0}</Project>
       <Name>Data.ClientModels</Name>

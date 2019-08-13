@@ -2,9 +2,11 @@
 using Data.Interfaces.Services;
 using Data.Repository.Services;
 using Data.WebApi.Base;
+using Framework.Core.Features;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Web;
 using System.Web.Http;
 
@@ -42,6 +44,7 @@ namespace Data.WebApi.Controllers
             }
             catch (Exception ex)
             {
+                Logger.Error(ex.Message, MethodBase.GetCurrentMethod().Name);
                 return InternalServerError(ex.Message);
             }
         }
@@ -66,6 +69,7 @@ namespace Data.WebApi.Controllers
             }
             catch (Exception ex)
             {
+                Logger.Error(ex.Message, MethodBase.GetCurrentMethod().Name);
                 return InternalServerError(ex.Message);
             }
         }
@@ -90,6 +94,7 @@ namespace Data.WebApi.Controllers
             }
             catch (Exception ex)
             {
+                Logger.Error(ex.Message, MethodBase.GetCurrentMethod().Name);
                 return InternalServerError(ex.Message);
             }
         }
@@ -114,6 +119,7 @@ namespace Data.WebApi.Controllers
             }
             catch (Exception ex)
             {
+                Logger.Error(ex.Message, MethodBase.GetCurrentMethod().Name);
                 return InternalServerError(ex.Message);
             }
         }
