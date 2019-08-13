@@ -12,7 +12,7 @@ namespace Data.Models.OracleDb
     using System;
     using System.Collections.Generic;
     
-    public partial class PENDING_CHANGES
+    public partial class CTApplications_PendingChanges
     {
         public int PAX_ID { get; set; }
         public short SEASON { get; set; }

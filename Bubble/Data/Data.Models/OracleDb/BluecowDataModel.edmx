@@ -158,7 +158,7 @@ FROM "CT_APPLICATIONS"."PENDING_CHANGES" "PENDING_CHANGES"</DefiningQuery>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="PASSENGER">
+        <EntityType Name="CTBookings_Passenger">
           <Key>
             <PropertyRef Name="PAX_ID" />
           </Key>
@@ -219,7 +219,7 @@ FROM "CT_APPLICATIONS"."PENDING_CHANGES" "PENDING_CHANGES"</DefiningQuery>
           <Property Name="PSN_PH_COUNTRY" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
           <Property Name="PSN_PH_LOCAL" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityType Name="PASSENGER1">
+        <EntityType Name="CTPassengers_Passenger">
           <Key>
             <PropertyRef Name="PAX_ID" />
           </Key>
@@ -250,7 +250,7 @@ FROM "CT_APPLICATIONS"."PENDING_CHANGES" "PENDING_CHANGES"</DefiningQuery>
           <Property Name="OTC_PH_LOCAL" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
           <Property Name="OTC_EMAIL" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityType Name="PENDING_CHANGES">
+        <EntityType Name="CTApplications_PendingChanges">
           <Key>
             <PropertyRef Name="PAX_ID" />
             <PropertyRef Name="SEASON" />
@@ -280,9 +280,9 @@ FROM "CT_APPLICATIONS"."PENDING_CHANGES" "PENDING_CHANGES"</DefiningQuery>
           <Property Name="MARKET_ID" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
         </EntityType>
         <EntityContainer Name="BluecowEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="PASSENGERs" EntityType="Self.PASSENGER" />
-          <EntitySet Name="PASSENGER1" EntityType="Self.PASSENGER1" />
-          <EntitySet Name="PENDING_CHANGES" EntityType="Self.PENDING_CHANGES" />
+          <EntitySet Name="CTBookings_Passenger" EntityType="Model.CTBookings_Passenger" />
+          <EntitySet Name="CTPassengers_Passenger" EntityType="Model.CTPassengers_Passenger" />
+          <EntitySet Name="CTApplications_PendingChanges" EntityType="Model.CTApplications_PendingChanges" />
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
@@ -290,8 +290,8 @@ FROM "CT_APPLICATIONS"."PENDING_CHANGES" "PENDING_CHANGES"</DefiningQuery>
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="BluecowEntities">
-          <EntitySetMapping Name="PASSENGERs">
-            <EntityTypeMapping TypeName="Model.PASSENGER">
+          <EntitySetMapping Name="CTBookings_Passenger">
+            <EntityTypeMapping TypeName="Model.CTBookings_Passenger">
               <MappingFragment StoreEntitySet="PASSENGER">
                 <ScalarProperty Name="PAX_ID" ColumnName="PAX_ID" />
                 <ScalarProperty Name="PERSON_TITLE" ColumnName="PERSON_TITLE" />
@@ -352,8 +352,8 @@ FROM "CT_APPLICATIONS"."PENDING_CHANGES" "PENDING_CHANGES"</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="PASSENGER1">
-            <EntityTypeMapping TypeName="Model.PASSENGER1">
+          <EntitySetMapping Name="CTPassengers_Passenger">
+            <EntityTypeMapping TypeName="Model.CTPassengers_Passenger">
               <MappingFragment StoreEntitySet="PASSENGER1">
                 <ScalarProperty Name="PAX_ID" ColumnName="PAX_ID" />
                 <ScalarProperty Name="PERSON_TITLE" ColumnName="PERSON_TITLE" />
@@ -384,8 +384,8 @@ FROM "CT_APPLICATIONS"."PENDING_CHANGES" "PENDING_CHANGES"</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="PENDING_CHANGES">
-            <EntityTypeMapping TypeName="Model.PENDING_CHANGES">
+          <EntitySetMapping Name="CTApplications_PendingChanges">
+            <EntityTypeMapping TypeName="Model.CTApplications_PendingChanges">
               <MappingFragment StoreEntitySet="PENDING_CHANGES">
                 <ScalarProperty Name="PAX_ID" ColumnName="PAX_ID" />
                 <ScalarProperty Name="SEASON" ColumnName="SEASON" />

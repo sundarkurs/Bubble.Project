@@ -63,13 +63,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BluecowDataModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="OracleDb\PASSENGER.cs">
+    <Compile Include="OracleDb\CTApplications_PendingChanges.cs">
       <DependentUpon>BluecowDataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="OracleDb\PASSENGER1.cs">
+    <Compile Include="OracleDb\CTBookings_Passenger.cs">
       <DependentUpon>BluecowDataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="OracleDb\PENDING_CHANGES.cs">
+    <Compile Include="OracleDb\CTPassengers_Passenger.cs">
       <DependentUpon>BluecowDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

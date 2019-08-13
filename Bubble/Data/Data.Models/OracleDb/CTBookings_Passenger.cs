@@ -12,7 +12,7 @@ namespace Data.Models.OracleDb
     using System;
     using System.Collections.Generic;
     
-    public partial class PASSENGER1
+    public partial class CTBookings_Passenger
     {
         public int PAX_ID { get; set; }
         public string PERSON_TITLE { get; set; }
@@ -34,11 +34,41 @@ namespace Data.Models.OracleDb
         public string INS_PHONE_NO { get; set; }
         public string PHONE_NO { get; set; }
         public string SPECIAL_NEED { get; set; }
-        public string MEDICATION { get; set; }
         public string PSPT_BIRTH_PLACE { get; set; }
-        public string OTC_SUPPLIED { get; set; }
         public string OTC_PH_COUNTRY { get; set; }
         public string OTC_PH_LOCAL { get; set; }
         public string OTC_EMAIL { get; set; }
+        public string EMG_STATUS { get; set; }
+        public Nullable<System.DateTime> EMG_DATE { get; set; }
+        public string EMG_PH_COUNTRY { get; set; }
+        public string EMG_PH_LOCAL { get; set; }
+        public string OTC_STATUS { get; set; }
+        public Nullable<System.DateTime> OTC_DATE { get; set; }
+        public string OTC_SUPPLIED { get; set; }
+        public string GIVEN_NAME { get; set; }
+        public string EMG_PH_AREA { get; set; }
+        public string OTC_PH_AREA { get; set; }
+        public string INS_PH_COUNTRY { get; set; }
+        public string INS_PH_AREA { get; set; }
+        public string INS_PH_LOCAL { get; set; }
+        public Nullable<System.DateTime> MODIFIED_DATE { get; set; }
+        public string UNIQUE_STATUS { get; set; }
+        public Nullable<int> PRIM_PAX_ID { get; set; }
+        public Nullable<short> TOUR_COUNT { get; set; }
+        public string JC_STATUS { get; set; }
+        public Nullable<System.DateTime> JC_DATE { get; set; }
+        public string PSPT_ISS_AUTH { get; set; }
+        public string PSN_PHONE { get; set; }
+        public string PSN_EMAIL { get; set; }
+        public string ADDR_STATUS { get; set; }
+        public Nullable<System.DateTime> ADDR_DATE { get; set; }
+        public string ADDR_STREET { get; set; }
+        public string ADDR_LOCALITY { get; set; }
+        public string ADDR_STATE { get; set; }
+        public string ADDR_POSTCODE { get; set; }
+        public string ADDR_COUNTRY { get; set; }
+        public Nullable<System.DateTime> PAX_UPDATE_DATE { get; set; }
+        public string PSN_PH_COUNTRY { get; set; }
+        public string PSN_PH_LOCAL { get; set; }
     }
 }

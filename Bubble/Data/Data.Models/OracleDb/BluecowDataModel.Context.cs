@@ -25,8 +25,8 @@ namespace Data.Models.OracleDb
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<PASSENGER> PASSENGERs { get; set; }
-        public DbSet<PASSENGER1> PASSENGER1 { get; set; }
-        public DbSet<PENDING_CHANGES> PENDING_CHANGES { get; set; }
+        public DbSet<CTBookings_Passenger> CTBookings_Passenger { get; set; }
+        public DbSet<CTPassengers_Passenger> CTPassengers_Passenger { get; set; }
+        public DbSet<CTApplications_PendingChanges> CTApplications_PendingChanges { get; set; }
     }
 }

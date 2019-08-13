@@ -40,6 +40,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomerService\BookingPassenger.cs" />
+    <Compile Include="CustomerService\ModifiedPassenger.cs" />
+    <Compile Include="CustomerService\PaxPendingChange.cs" />
+    <Compile Include="CustomerService\PendingChange.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
