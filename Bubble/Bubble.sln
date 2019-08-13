@@ -23,7 +23,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.Core", "Framework
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.Common", "Framework\Framework.Common\Framework.Common.csproj", "{AF72AF55-2232-4E08-BA3B-A7ACA268196B}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{C3E5E4E9-C53D-4D46-8A8D-B8FB917626E7}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{A57FB22E-52DF-4BFB-B576-F3D5827EFF47}"
+	ProjectSection(SolutionItems) = preProject
+		Documents\README.md = Documents\README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
