@@ -23,9 +23,9 @@ namespace Data.WebApi.Controllers
         /// 
         /// </summary>
         /// <param name="pendingChangesService"></param>
-        public PendingChangesController()
+        public PendingChangesController(IPendingChangesService pendingChangesService)
         {
-            _pendingChangesControllerInternal = new PendingChangesControllerInternal(new PendingChangesService());
+            _pendingChangesControllerInternal = new PendingChangesControllerInternal(pendingChangesService);
         }
 
         /// <summary>

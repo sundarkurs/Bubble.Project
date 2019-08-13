@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Data.ClientModels.CustomerService;
+using Data.Models.OracleDb;
 
 namespace Data.Repository.Services
 {
@@ -22,7 +23,19 @@ namespace Data.Repository.Services
 
         List<PendingChange> IPendingChangesService.GetPendingChanges()
         {
-            throw new NotImplementedException();
+            using (var context = new BluecowEntities())
+            {
+                var changes = context.CTApplications_PendingChanges.ToList();
+
+                var response = new List<PendingChange>();
+                response.Add(new PendingChange()
+                {
+                    FirstName = changes[0].FIRST_NAME,
+                    FamilyName = changes[0].FAMILY_NAME
+                });
+
+                return response;
+            }
         }
 
         bool IPendingChangesService.Reject(int paxId)
