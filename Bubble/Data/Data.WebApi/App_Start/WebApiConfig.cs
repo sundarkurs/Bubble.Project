@@ -1,5 +1,8 @@
-﻿using Framework.DependencyResolver;
+﻿using Data.Interfaces.Services;
+using Data.Repository.Services;
+using Framework.DependencyResolver;
 using System.Web.Http;
+using System.Web.Http.Dependencies;
 
 namespace Data.WebApi
 {
@@ -16,7 +19,7 @@ namespace Data.WebApi
         {
 
             // Web API configuration and services
-            config.DependencyResolver = new UnityResolver(WebApiBootstrapper.BuildUnityContainer());
+            config.DependencyResolver = WebApiBootstrapper.BuildUnityContainer();
 
             // Web API routes
             config.MapHttpAttributeRoutes();

@@ -50,7 +50,7 @@ namespace Data.WebApi
                     // hold additional metadata for an API. Version and title are required but you can also provide
                     // additional fields by chaining methods off SingleApiVersion.
                     //
-                    c.SingleApiVersion("v1", "CT.Data.WebApi");
+                    c.SingleApiVersion("v1", "Data.WebApi");
 
                     // If you want the output Swagger docs to be indented properly, enable the "PrettyPrint" option.
                     //

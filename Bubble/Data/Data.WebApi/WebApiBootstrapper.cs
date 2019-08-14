@@ -1,7 +1,7 @@
 ﻿using Data.Interfaces.Services;
 using Data.Repository.Services;
-using Microsoft.Practices.Unity;
-
+using Framework.DependencyResolver;
+using System.Web.Http.Dependencies;
 
 namespace Data.WebApi
 {
@@ -14,36 +14,13 @@ namespace Data.WebApi
         /// 
         /// </summary>
         /// <returns></returns>
-        public static IUnityContainer BuildUnityContainer()
+        public static IDependencyResolver BuildUnityContainer()
         {
-            var container = new UnityContainer();
-
-            return Execute(container);
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="container"></param>
-        /// <returns></returns>
-        public static IUnityContainer Execute(IUnityContainer container)
-        {
-            container = RegisterServices(container);
-
-            return container;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="container"></param>
-        /// <returns></returns>
-        private static IUnityContainer RegisterServices(IUnityContainer container)
-        {
+            var container = new DependencyInjection();
 
             container.RegisterType<IPendingChangesService, PendingChangesService>();
 
-            return container;
+            return container.Execute();
         }
     }
 }
