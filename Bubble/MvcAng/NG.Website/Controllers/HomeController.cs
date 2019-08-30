@@ -35,8 +35,11 @@ namespace NG.Website.Controllers
         public ActionResult Login()
         {
             ViewBag.Message = "Your contact page.";
-
-            return View();
+            if (User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("Index", "Dashboard");
+            }
+            return Index();
         }
 
         [Authorize]
