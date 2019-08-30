@@ -1,0 +1,37 @@
+﻿@{
+    ViewBag.Title = "Secure";
+}
+
+<h2>Secure logged in as @User.Identity.Name</h2>
+<div>
+    <a href="~/Home/Logout" class="btn btn-primary">Logout</a>
+    <a href="~/Home/ProfileUpdate" class="btn btn-primary">Update Profile</a>
+</div>
+
+<hr />
+
+<div>
+
+    <a class="btn btn-default" href="~/Home/CallApi/">Get Booking Data from API (MVC)</a>
+    <a class="btn btn-default" href="~/Home/AddClaim/">Add Claims</a>
+
+</div>
+<pre id="result"></pre>
+
+<ul>
+    @foreach (var claim in ((System.Security.Claims.ClaimsPrincipal)User).Claims)
+    {
+        <li>
+            @claim.Type
+            :
+            @claim.Value
+        </li>
+    }
+</ul>
+
+@{
+    var cp = (System.Security.Claims.ClaimsPrincipal)User;
+    var token = cp.FindFirst("access_token")?.Value;
+}
+
+
