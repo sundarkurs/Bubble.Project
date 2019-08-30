@@ -32,11 +32,19 @@ namespace NG.Website.Controllers
         }
 
         [Authorize]
-        public ActionResult Secure()
+        public ActionResult Login()
         {
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+
+        [Authorize]
+        public void Logout()
+        {
+            var ctx = Request.GetOwinContext();
+            ctx.Authentication.SignOut("Cookies");
+            ctx.Authentication.SignOut("oidc");
         }
     }
 }

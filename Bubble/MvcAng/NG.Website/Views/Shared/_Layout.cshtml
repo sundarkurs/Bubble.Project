@@ -8,6 +8,10 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
+    @{
+        var cp = (System.Security.Claims.ClaimsPrincipal)User;
+        var token = cp.FindFirst("access_token")?.Value;
+    }
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -23,7 +27,16 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Login", "Secure", "Home")</li>
+                    <li>
+                        @if (token != null)
+                        {
+                            @Html.ActionLink("Logout", "Logout", "Home")
+                        }
+                        else
+                        {
+                            @Html.ActionLink("Login", "Login", "Home")
+                        }
+                    </li>
                 </ul>
             </div>
         </div>
