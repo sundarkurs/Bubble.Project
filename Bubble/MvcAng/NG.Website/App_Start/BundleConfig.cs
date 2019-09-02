@@ -33,8 +33,11 @@ namespace NG.Website
                 "~/Scripts/angular-cookies.min.js"));
 
 
-            bundles.Add(new ScriptBundle("~/bundles/angular-app").Include(
-                "~/Scripts/App/app.js"));
+            bundles.Add(new ScriptBundle("~/bundles/portalApp").Include(
+                "~/Scripts/App/app.js",
+                "~/Scripts/App/app.constant.js",
+                "~/Scripts/App/app.config.js",
+                "~//Scripts/App/app.factory.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/dashboard").Include(
                 "~/Scripts/App/Dashboard/Dashboard.Controller.js",

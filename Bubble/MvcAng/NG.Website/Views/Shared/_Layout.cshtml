@@ -11,7 +11,7 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/angularjs")
 
-    @Scripts.Render("~/bundles/angular-app")
+    @Scripts.Render("~/bundles/portalApp")
 
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
@@ -22,6 +22,9 @@
         var cp = (System.Security.Claims.ClaimsPrincipal)User;
         var token = cp.FindFirst("access_token")?.Value;
     }
+
+    <input type="hidden" id="hdnAccessToken" value="@token" />
+
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">

@@ -5,17 +5,16 @@
         .module('ct.customerServicePortal')
         .factory('dashboardService', dashboardService);
 
-    dashboardService.$inject = ['$http', '$rootScope'];
+    dashboardService.$inject = ['$http', '$rootScope', 'dataWebApiRequest'];
 
-    function dashboardService($http, $rootScope) {
+    function dashboardService($http, $rootScope, dataWebApiRequest) {
         var service = {};
-        service.GetAuthMessage = getAuthMessage;
+        service.GetPendingChanges = getPendingChanges;
 
         return service;
 
-        function getAuthMessage(callback) {
-            return [];
-            //dataWebApiRequest.get("pendingchanges/auth", callback);
+        function getPendingChanges(callback) {
+            dataWebApiRequest.get("pendingchanges", callback);
         }
     }
 })();

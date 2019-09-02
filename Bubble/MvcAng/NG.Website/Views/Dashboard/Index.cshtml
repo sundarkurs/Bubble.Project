@@ -8,6 +8,12 @@
         {{message}}
     </div>
 
+   <ul>
+       <li ng-repeat="change in pendingChanges">
+           {{change.FirstName}}
+       </li>
+   </ul>
+
     <div class="row">
         <div ng-app="">
             <p>Name : <input type="text" ng-model="name"></p>

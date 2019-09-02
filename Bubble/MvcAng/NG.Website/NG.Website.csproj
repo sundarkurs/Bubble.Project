@@ -269,6 +269,9 @@
     <Content Include="Scripts\angular-touch.min.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
+    <Content Include="Scripts\App\app.config.js" />
+    <Content Include="Scripts\App\app.constant.js" />
+    <Content Include="Scripts\App\app.factory.js" />
     <Content Include="Scripts\App\app.js" />
     <Content Include="Scripts\App\Dashboard\Dashboard.Controller.js" />
     <Content Include="Scripts\App\Dashboard\Dashboard.Services.js" />

@@ -10,14 +10,20 @@
     function dashboardController($rootScope, $scope, $http, $location, dashboardService) {
 
         angular.extend($scope, {
-            message: "Welcome to customer service portal"
+            message: "Welcome to customer service portal",
+            pendingChanges: []
         });
 
         (function init() {
             console.log('init dashboardController');
+            dashboardService.GetPendingChanges(function (result) {
 
-            dashboardService.GetAuthMessage(function () {
-                debugger;
+                if (result && result.IsSuccess) {
+                    if (result.Data && result.Data.length > 0) {
+                        $scope.pendingChanges = result.Data;
+                    }
+                }
+
             });
 
         })();
