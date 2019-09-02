@@ -34,14 +34,14 @@ namespace NG.Website
 
 
             bundles.Add(new ScriptBundle("~/bundles/portalApp").Include(
-                "~/Scripts/App/app.js",
-                "~/Scripts/App/app.constant.js",
-                "~/Scripts/App/app.config.js",
-                "~//Scripts/App/app.factory.js"));
+                "~/App/app.js",
+                "~/App/app.constant.js",
+                "~/App/app.config.js",
+                "~/App/app.factory.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/dashboard").Include(
-                "~/Scripts/App/Dashboard/Dashboard.Controller.js",
-                "~/Scripts/App/Dashboard/Dashboard.Services.js"));
+                "~/App/Dashboard/Dashboard.Controller.js",
+                "~/App/Dashboard/Dashboard.Services.js"));
 
 
         }

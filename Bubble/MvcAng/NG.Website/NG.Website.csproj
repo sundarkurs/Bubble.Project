@@ -235,6 +235,12 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App\app.config.js" />
+    <Content Include="App\app.constant.js" />
+    <Content Include="App\app.factory.js" />
+    <Content Include="App\app.js" />
+    <Content Include="App\Dashboard\Dashboard.Controller.js" />
+    <Content Include="App\Dashboard\Dashboard.Services.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -269,12 +275,6 @@
     <Content Include="Scripts\angular-touch.min.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
-    <Content Include="Scripts\App\app.config.js" />
-    <Content Include="Scripts\App\app.constant.js" />
-    <Content Include="Scripts\App\app.factory.js" />
-    <Content Include="Scripts\App\app.js" />
-    <Content Include="Scripts\App\Dashboard\Dashboard.Controller.js" />
-    <Content Include="Scripts\App\Dashboard\Dashboard.Services.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
