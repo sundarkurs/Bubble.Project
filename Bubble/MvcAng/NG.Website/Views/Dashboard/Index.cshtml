@@ -8,11 +8,11 @@
         {{message}}
     </div>
 
-   <ul>
-       <li ng-repeat="change in pendingChanges">
-           {{change.FirstName}}
-       </li>
-   </ul>
+    <ul>
+        <li ng-repeat="change in pendingChanges">
+            {{change.FirstName}}
+        </li>
+    </ul>
 
     <div class="row">
         <div ng-app="">
@@ -20,6 +20,15 @@
             <h1>Hello {{name}}</h1>
         </div>
     </div>
+
+    <div>
+        <input type="button" value="Get Users" ng-click="getUsers();" />
+    </div>
+    <ul>
+        <li ng-repeat="user in users">
+            {{user}}
+        </li>
+    </ul>
 </div>
 
 @Scripts.Render("~/bundles/dashboard")

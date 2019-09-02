@@ -28,6 +28,12 @@
 
         })();
 
+        $scope.getUsers = function () {
+            dashboardService.GetUsers(function (result) {
+                $scope.users = result;
+            });
+        }
+
     }
 
 })();
