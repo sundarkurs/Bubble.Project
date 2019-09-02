@@ -26,6 +26,21 @@ namespace NG.Website
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/angularjs").Include(
+                "~/Scripts/angular.min.js",
+                "~/Scripts/angular-route.min.js",
+                "~/Scripts/angular-cookies.min.js"));
+
+
+            bundles.Add(new ScriptBundle("~/bundles/angular-app").Include(
+                "~/Scripts/App/app.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/dashboard").Include(
+                "~/Scripts/App/Dashboard/Dashboard.Controller.js",
+                "~/Scripts/App/Dashboard/Dashboard.Services.js"));
+
+
         }
     }
 }
