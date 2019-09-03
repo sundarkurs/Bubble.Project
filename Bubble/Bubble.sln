@@ -25,6 +25,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.Common", "Framewo
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{A57FB22E-52DF-4BFB-B576-F3D5827EFF47}"
 	ProjectSection(SolutionItems) = preProject
+		mvc-identity-integration.txt = mvc-identity-integration.txt
 		Documents\README.md = Documents\README.md
 	EndProjectSection
 EndProject
@@ -33,6 +34,11 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MvcAng", "MvcAng", "{BCCECE3C-D3C0-40BD-ADC1-778ECFE71873}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NG.Website", "MvcAng\NG.Website\NG.Website.csproj", "{FF9A61B7-DAB9-43A8-A06A-D7C55C9B30AC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "screenshots", "screenshots", "{2FC9D181-2E08-42C0-B0AA-F82DCB1F65B8}"
+	ProjectSection(SolutionItems) = preProject
+		C:\Users\sundarkrishna.urs.SONATA\Desktop\nuget-references-added-for-mvc-identity-integration.PNG = C:\Users\sundarkrishna.urs.SONATA\Desktop\nuget-references-added-for-mvc-identity-integration.PNG
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -95,6 +101,7 @@ Global
 		{AF72AF55-2232-4E08-BA3B-A7ACA268196B} = {B11236BD-AEAA-40B8-8EF8-35B4E61EB2EF}
 		{DE3F310C-FC3B-4841-B6C9-EECF0F58B0C1} = {B11236BD-AEAA-40B8-8EF8-35B4E61EB2EF}
 		{FF9A61B7-DAB9-43A8-A06A-D7C55C9B30AC} = {BCCECE3C-D3C0-40BD-ADC1-778ECFE71873}
+		{2FC9D181-2E08-42C0-B0AA-F82DCB1F65B8} = {A57FB22E-52DF-4BFB-B576-F3D5827EFF47}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.Interception.2.1.505.0\lib\NET35

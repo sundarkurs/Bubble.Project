@@ -24,6 +24,16 @@ namespace NG.Website
         /// <param name="app">The application.</param>
         public void Configuration(IAppBuilder app)
         {
+            var config = new
+            {
+                Authority = ConfigurationManager.AppSettings["Identity.Host.Url"],
+                ClientId = ConfigurationManager.AppSettings["Identity.ClientId"],
+                RedirectUri = ConfigurationManager.AppSettings["RedirectUri"],
+                PostLogoutRedirectUri = ConfigurationManager.AppSettings["PostLogoutRedirectUri"],
+                Scope = ConfigurationManager.AppSettings["Scope"],
+                UserInfoUri = $"{ConfigurationManager.AppSettings["Identity.Host.Url"]}/connect/userinfo"
+            };
+
             app.UseCookieAuthentication(new CookieAuthenticationOptions
             {
                 AuthenticationType = "Cookies",
@@ -33,78 +43,68 @@ namespace NG.Website
 
             JwtSecurityTokenHandler.InboundClaimTypeMap.Clear();
 
-            var baseAddress = ConfigurationManager.AppSettings["Identity.Host.Url"];
-
-
-            var clientId = ConfigurationManager.AppSettings["Identity.ClientId"];
-
             app.UseOpenIdConnectAuthentication(new OpenIdConnectAuthenticationOptions
             {
                 AuthenticationType = "oidc",
                 SignInAsAuthenticationType = "Cookies",
-                Authority = baseAddress,
-                ClientId = clientId,
-                RedirectUri = ConfigurationManager.AppSettings["RedirectUri"],
-                PostLogoutRedirectUri = ConfigurationManager.AppSettings["PostLogoutRedirectUri"],
-                
+                Authority = config.Authority,
+                ClientId = config.ClientId,
+                RedirectUri = config.RedirectUri,
+                PostLogoutRedirectUri = config.PostLogoutRedirectUri,
                 ResponseType = "id_token token",
-                Scope = ConfigurationManager.AppSettings["Scope"],
+                Scope = config.Scope,
                 UseTokenLifetime = false,
                 Notifications = new OpenIdConnectAuthenticationNotifications
                 {
-                    SecurityTokenValidated = async n =>
+                    SecurityTokenValidated = async noti =>
                     {
-                        var claimsToExclude = new[]
-                        {
+                        var claimsToExclude = new[] {
                             "aud", "iss", "nbf", "exp", "nonce", "iat", "at_hash"
                         };
 
-                        var claimsToKeep =
-                            n.AuthenticationTicket.Identity.Claims
+                        var claimsToKeep = noti.AuthenticationTicket.Identity.Claims
                                 .Where(x => false == claimsToExclude.Contains(x.Type)).ToList();
-                        claimsToKeep.Add(new Claim("id_token", n.ProtocolMessage.IdToken));
 
-                        if (n.ProtocolMessage.AccessToken != null)
+                        claimsToKeep.Add(new Claim("id_token", noti.ProtocolMessage.IdToken));
+
+                        if (noti.ProtocolMessage.AccessToken != null)
                         {
-                            claimsToKeep.Add(new Claim("access_token", n.ProtocolMessage.AccessToken));
+                            claimsToKeep.Add(new Claim("access_token", noti.ProtocolMessage.AccessToken));
 
-                            var userInfoClient = new UserInfoClient(new Uri($"{baseAddress}/connect/userinfo"),
-                                n.ProtocolMessage.AccessToken);
+                            var userInfoClient = new UserInfoClient(new Uri(config.UserInfoUri), noti.ProtocolMessage.AccessToken);
                             var userInfoResponse = await userInfoClient.GetAsync();
                             var userInfoClaims = userInfoResponse.Claims
-                                .Where(x => x.Item1 != "sub") // filter sub since we're already getting it from id_token
+                                .Where(x => x.Item1 != "sub")
                                 .Select(x => new Claim(x.Item1, x.Item2));
                             claimsToKeep.AddRange(userInfoClaims);
                         }
 
-                        var ci = new ClaimsIdentity(n.AuthenticationTicket.Identity.AuthenticationType, "name", "role");
-                        ci.AddClaims(claimsToKeep);
+                        var claimsIdentity = new ClaimsIdentity(noti.AuthenticationTicket.Identity.AuthenticationType, "name", "role");
+                        claimsIdentity.AddClaims(claimsToKeep);
 
-                        n.AuthenticationTicket = new AuthenticationTicket(
-                            ci, n.AuthenticationTicket.Properties);
+                        noti.AuthenticationTicket = new AuthenticationTicket(claimsIdentity, noti.AuthenticationTicket.Properties);
                     },
 
-                    RedirectToIdentityProvider = n =>
+                    RedirectToIdentityProvider = noti =>
                     {
-                        if (n.ProtocolMessage.RequestType == OpenIdConnectRequestType.LogoutRequest)
+                        if (noti.ProtocolMessage.RequestType == OpenIdConnectRequestType.LogoutRequest)
                         {
-                            var idToken = n.OwinContext.Authentication.User.FindFirst("id_token")?.Value;
-                            n.ProtocolMessage.IdTokenHint = idToken;
+                            var idToken = noti.OwinContext.Authentication.User.FindFirst("id_token")?.Value;
+                            noti.ProtocolMessage.IdTokenHint = idToken;
                         }
 
-                        // if signing out, add the id_token_hint
-                        if (n.ProtocolMessage.RequestType != OpenIdConnectRequestType.LogoutRequest)
-                        {
-                            return Task.FromResult(0);
-                        }
-
-                        if (!n.OwinContext.Authentication.User.Claims.Any())
+                        if (noti.ProtocolMessage.RequestType != OpenIdConnectRequestType.LogoutRequest)
                         {
                             return Task.FromResult(0);
                         }
 
-                        var idTokenHint = n.OwinContext.Authentication.User.FindFirst("id_token").Value;
-                        n.ProtocolMessage.IdTokenHint = idTokenHint;
+                        if (!noti.OwinContext.Authentication.User.Claims.Any())
+                        {
+                            return Task.FromResult(0);
+                        }
+
+                        var idTokenHint = noti.OwinContext.Authentication.User.FindFirst("id_token").Value;
+                        noti.ProtocolMessage.IdTokenHint = idTokenHint;
 
                         return Task.FromResult(0);
                     }

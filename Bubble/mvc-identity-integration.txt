@@ -1,0 +1,30 @@
+1. Create MVC Project, do not select any authentication type
+2. Add below nuget references
+
+install-package Microsoft.Owin.Security.Cookies
+install-package Microsoft.Owin.Security.OpenIdConnect
+
+Note: add any missing references as per the nuget-references-added-for-mvc-identity-integration, which are in green.
+
+IdentityModel
+Microsoft.AspNet.Identity.Core
+Microsoft.AspNet.Identity.Owin
+System.IdentityModel.Tokens.Jwt
+Microsoft.IdentityModel.Tokens
+Microsoft.IdentityModel.Protocol.Extensions
+Microsoft.IdentityModel.Logging
+
+3. Add Owin startup file 
+[assembly: OwinStartup(typeof(NG.Website.Startup))]
+
+4. Decorate controller/action method with [Authorize] attribute
+
+5. If required, add Custom authorize attribute to implement custom logic
+
+AuthorizeAttribute class is available under both using System.Web.Mvc and using System.Web.Http namespaces.
+Use System.Web.Mvc to implement the custom authorization in MVC and the Http one for the WebAPI.
+The input parameters will be different, and the implementations will be different for MVC and WebAPI.
+
+
+Reference:
+https://identityserver.github.io/Documentation/docsv2/overview/mvcGettingStarted.html
