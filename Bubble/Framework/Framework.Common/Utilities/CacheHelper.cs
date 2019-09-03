@@ -17,18 +17,18 @@ namespace Framework.Common.Utilities
         {
             try
             {
-                //if (Configurations.RedisEnabled)
-                //{
-                //    DefaultCacheProvider = RedisCacheProvider.Instance;
-                //    //Logger.Info("RedisCacheProvider Activated", "Common");
-                //}
-                //else
-                //{
-                //    //Logger.Info("InMemoryCacheProvider Activated", "Common");
-                //    DefaultCacheProvider = InMemoryCacheProvider.Instance;
-                //}
+                if (Configurations.RedisEnabled)
+                {
+                    DefaultCacheProvider = RedisCacheProvider.Instance;
+                    //Logger.Info("RedisCacheProvider Activated", "Common");
+                }
+                else
+                {
+                    //Logger.Info("InMemoryCacheProvider Activated", "Common");
+                    DefaultCacheProvider = InMemoryCacheProvider.Instance;
+                }
 
-                DefaultCacheProvider = InMemoryCacheProvider.Instance;
+                //DefaultCacheProvider = InMemoryCacheProvider.Instance;
 
                 if (DefaultCacheProvider == null)
                 {
