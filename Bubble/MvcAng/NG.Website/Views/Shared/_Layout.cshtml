@@ -40,16 +40,16 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>
-                        @if (token != null)
-                        {
-                            @Html.ActionLink("Logout", "Logout", "Home")
-                        }
-                        else
-                        {
-                            @Html.ActionLink("Login", "Login", "Home")
-                        }
-                    </li>
+
+                    @if (token != null)
+                    {
+                        <li>@Html.ActionLink("Dashboard", "Index", "Dashboard")</li>
+                        <li>@Html.ActionLink("Logout", "Logout", "Home")</li>
+                    }
+                    else
+                    {
+                        <li>@Html.ActionLink("Login", "Login", "Home")</li>
+                    }
                 </ul>
             </div>
         </div>

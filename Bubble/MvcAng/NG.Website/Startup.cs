@@ -46,6 +46,7 @@ namespace NG.Website
                 ClientId = clientId,
                 RedirectUri = ConfigurationManager.AppSettings["RedirectUri"],
                 PostLogoutRedirectUri = ConfigurationManager.AppSettings["PostLogoutRedirectUri"],
+                
                 ResponseType = "id_token token",
                 Scope = ConfigurationManager.AppSettings["Scope"],
                 UseTokenLifetime = false,

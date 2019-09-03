@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NG.Website.Base;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -6,7 +7,7 @@ using System.Web.Mvc;
 
 namespace NG.Website.Controllers
 {
-    [Authorize]
+    [CustomAuthorize("CustomerService", "Customer")]
     public class DashboardController : Controller
     {
         public ActionResult Index()

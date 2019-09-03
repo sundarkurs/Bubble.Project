@@ -14,6 +14,13 @@ namespace NG.Website.Controllers
             return View();
         }
 
+        public ActionResult Contact()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
+
         [Authorize]
         public ActionResult About()
         {
@@ -22,13 +29,6 @@ namespace NG.Website.Controllers
             var cl = (User as ClaimsPrincipal).Claims;
             return View();
 
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
         }
 
         [Authorize]
