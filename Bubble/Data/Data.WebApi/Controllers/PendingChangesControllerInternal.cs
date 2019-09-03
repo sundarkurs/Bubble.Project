@@ -1,6 +1,7 @@
 ﻿using Data.ClientModels.Comm;
 using Data.ClientModels.CustomerService;
 using Data.Interfaces.Services;
+using Framework.Common.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -48,7 +49,14 @@ namespace Data.WebApi.Controllers
         /// <returns></returns>
         public Response<PaxPendingChange> GetPaxPendingChanges(int paxId)
         {
-            var serviceResult = _pendingChangesService.GetPaxPendingChanges(paxId);
+            var cacheKey = "PAX-CHANGE-" + paxId.ToString();
+            var serviceResult = CacheHelper.Get<PaxPendingChange>(cacheKey);
+
+            if (serviceResult == null)
+            {
+                serviceResult = _pendingChangesService.GetPaxPendingChanges(paxId);
+                CacheHelper.Set(cacheKey, serviceResult);
+            }
 
             if (serviceResult == null)
             {

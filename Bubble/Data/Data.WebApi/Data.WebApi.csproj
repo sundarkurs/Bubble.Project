@@ -267,6 +267,10 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Framework\Framework.Common\Framework.Common.csproj">
+      <Project>{af72af55-2232-4e08-ba3b-a7aca268196b}</Project>
+      <Name>Framework.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Framework\Framework.Core\Framework.Core.csproj">
       <Project>{1c53b9ca-7b69-45a8-b802-de02b91ef5f4}</Project>
       <Name>Framework.Core</Name>
