@@ -13,15 +13,17 @@ namespace Framework.Common.Utilities
             {
                 return json;
             }
+
             var bytes = Encoding.Unicode.GetBytes(json);
-            using (var msi = new MemoryStream(bytes))
-            using (var mso = new MemoryStream())
+            using (var inputStream = new MemoryStream(bytes))
+            using (var outputStream = new MemoryStream())
             {
-                using (var gs = new GZipStream(mso, CompressionMode.Compress))
+                using (var gStream = new GZipStream(outputStream, CompressionMode.Compress))
                 {
-                    msi.CopyTo(gs);
+                    inputStream.CopyTo(gStream);
                 }
-                return Convert.ToBase64String(mso.ToArray());
+
+                return Convert.ToBase64String(outputStream.ToArray());
             }
         }
 
@@ -31,15 +33,17 @@ namespace Framework.Common.Utilities
             {
                 return compressedJson;
             }
+
             var bytes = Convert.FromBase64String(compressedJson);
-            using (var msi = new MemoryStream(bytes))
-            using (var mso = new MemoryStream())
+            using (var inputStream = new MemoryStream(bytes))
+            using (var outputStream = new MemoryStream())
             {
-                using (var gs = new GZipStream(msi, CompressionMode.Decompress))
+                using (var gStream = new GZipStream(inputStream, CompressionMode.Decompress))
                 {
-                    gs.CopyTo(mso);
+                    gStream.CopyTo(outputStream);
                 }
-                return Encoding.Unicode.GetString(mso.ToArray());
+
+                return Encoding.Unicode.GetString(outputStream.ToArray());
             }
         }
     }

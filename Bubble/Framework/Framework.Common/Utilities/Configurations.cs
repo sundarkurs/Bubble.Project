@@ -13,13 +13,23 @@ namespace Framework.Common.Utilities
 
         public static string RedisIsSecured => ConfigurationManager.AppSettings["RedisIsSecured"];
 
+        public static int CacheExpiryInMinutes
+        {
+            get
+            {
+                int val;
+                return
+                    int.TryParse(ConfigurationManager.AppSettings["CacheExpiryInMinutes"], out val) ? val : 30;
+            }
+        }
+
         public static TimeSpan CacheExpiryTimeSpan
         {
             get
             {
                 int val;
                 return
-                    TimeSpan.FromMinutes(int.TryParse(ConfigurationManager.AppSettings["CacheExpiryTimeSpan"], out val)
+                    TimeSpan.FromMinutes(int.TryParse(ConfigurationManager.AppSettings["CacheExpiryInMinutes"], out val)
                         ? val : 30);
             }
         }

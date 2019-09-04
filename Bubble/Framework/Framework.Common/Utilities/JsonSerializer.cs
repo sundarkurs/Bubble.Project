@@ -10,7 +10,9 @@ namespace Framework.Common.Utilities
 {
     public static class JsonSerializer
     {
-
+        /// <summary>
+        /// https://www.newtonsoft.com/json/help/html/Introduction.htm
+        /// </summary>
         private static readonly JsonSerializerSettings JsonSerializerSettings = new JsonSerializerSettings
         {
             //MissingMemberHandling = MissingMemberHandling.Ignore,

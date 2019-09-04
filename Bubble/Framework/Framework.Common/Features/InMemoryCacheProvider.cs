@@ -8,7 +8,7 @@ namespace Framework.Common.Features
 {
     public sealed class InMemoryCacheProvider : ICacheProvider, IDisposable
     {
-        private const int DefaultCacheExpirationTimeinMinutes = 30;
+        private readonly int DefaultCacheExpirationTimeinMinutes = Configurations.CacheExpiryInMinutes;
         private readonly CacheItemPolicy _defaultCacheItemPolicy;
 
         private MemoryCache _cache;
@@ -20,12 +20,9 @@ namespace Framework.Common.Features
             {
                 SlidingExpiration = TimeSpan.FromMinutes(DefaultCacheExpirationTimeinMinutes),
 
-                // when item got removed from the cache, call back event will dispose the item immediately.
                 RemovedCallback = args =>
                 {
-                    // Check if the items is disposable.
                     var value = args.CacheItem.Value as IDisposable;
-                    // dispose the item.
                     value?.Dispose();
                 }
             };
@@ -54,8 +51,6 @@ namespace Framework.Common.Features
 
         private T GetFormattedData<T>(string key, T data)
         {
-            // TODO: this function is a temporary measure to verify the data is serializable or not, change the configuration to true, if this required.
-            // Check if the data added to cache is serializable, otherwise if not serializable, it may lead to issues when using redis cache.
             if (!Configurations.ValidateCacheDataSerializable)
             {
                 return data;
@@ -67,11 +62,7 @@ namespace Framework.Common.Features
                 var deserializeData = JsonSerializer.Deserialize<T>(serializeData);
                 return deserializeData;
             }
-            catch (Exception ex)
-            {
-                //Logger.Warn($"Serialization failed for Key : { key}", $"{GetType().FullName} / {MethodBase.GetCurrentMethod().Name}");
-                //Logger.Error(ex, $"{GetType().FullName} / {MethodBase.GetCurrentMethod().Name}");
-            }
+            catch (Exception ex) { }
 
             return data;
         }

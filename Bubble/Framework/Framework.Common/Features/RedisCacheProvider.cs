@@ -17,12 +17,13 @@ namespace Framework.Common.Features
 
         private bool _disposed;
 
+        private short _retryCount = 3;
+
         public RedisCacheProvider()
         {
             var connectionString =
                 $"{Configurations.RedisHost},ssl={Configurations.RedisIsSecured},password={Configurations.RedisAccountKey}";
 
-            // Get & initalize the Redis Connection String.
             _connectionMultiplexer = ConnectionMultiplexer.Connect(connectionString);
         }
 
@@ -30,56 +31,34 @@ namespace Framework.Common.Features
 
         public void Set<T>(string key, T data)
         {
-            // Define your retry strategy: retry 3 times, 1 second apart.  
-            var retryStrategy = new Incremental(5, TimeSpan.FromSeconds(1), TimeSpan.FromSeconds(2));
-
-            // Define your retry policy using the retry strategy and the Windows Azure storage  
-            // transient fault detection strategy.  
+            var retryStrategy = new Incremental(_retryCount, TimeSpan.FromSeconds(1), TimeSpan.FromSeconds(2));
             var retryPolicy = new RetryPolicy<StorageTransientErrorDetectionStrategy>(retryStrategy);
 
-            // Do some work that may result in a transient fault.  
             try
             {
-                // Call a method that uses Windows Azure storage and which may  
-                // throw a transient exception.  
-                retryPolicy.ExecuteAction(
-                    () =>
-                    {
-                        var database = _connectionMultiplexer.GetDatabase();
-                        database.StringSet(key, JsonSerializer.Serialize(data), Configurations.CacheExpiryTimeSpan);
-                    });
+                retryPolicy.ExecuteAction(() =>
+                {
+                    var database = _connectionMultiplexer.GetDatabase();
+                    database.StringSet(key, JsonSerializer.Serialize(data), Configurations.CacheExpiryTimeSpan);
+                });
             }
-            catch (Exception ex)
-            {
-                //Logger.Error(ex, $"{GetType().FullName} / {MethodBase.GetCurrentMethod().Name}");
-            }
+            catch (Exception ex) { }
         }
 
         public T Set<T>(string key, T data, bool returnIfExists)
         {
-            // Define your retry strategy: retry 3 times, 1 second apart.  
-            var retryStrategy = new Incremental(5, TimeSpan.FromSeconds(1), TimeSpan.FromSeconds(2));
-
-            // Define your retry policy using the retry strategy and the Windows Azure storage  
-            // transient fault detection strategy.  
+            var retryStrategy = new Incremental(_retryCount, TimeSpan.FromSeconds(1), TimeSpan.FromSeconds(2));
             var retryPolicy = new RetryPolicy<StorageTransientErrorDetectionStrategy>(retryStrategy);
 
-            // Do some work that may result in a transient fault.  
             try
             {
-                // Call a method that uses Windows Azure storage and which may  
-                // throw a transient exception.  
-                retryPolicy.ExecuteAction(
-                    () =>
-                    {
-                        var database = _connectionMultiplexer.GetDatabase();
-                        database.StringSet(key, JsonSerializer.Serialize(data), Configurations.CacheExpiryTimeSpan);
-                    });
+                retryPolicy.ExecuteAction(() =>
+                {
+                    var database = _connectionMultiplexer.GetDatabase();
+                    database.StringSet(key, JsonSerializer.Serialize(data), Configurations.CacheExpiryTimeSpan);
+                });
             }
-            catch (Exception ex)
-            {
-                //Logger.Error(ex, $"{GetType().FullName} / {MethodBase.GetCurrentMethod().Name}");
-            }
+            catch (Exception ex) { }
 
             return returnIfExists ? Get<T>(key) : data;
         }
@@ -87,10 +66,9 @@ namespace Framework.Common.Features
         public T Get<T>(string key)
         {
             var cachedData = default(T);
-            var retryStrategy = new Incremental(5, TimeSpan.FromSeconds(1), TimeSpan.FromSeconds(2));
+            var retryStrategy = new Incremental(_retryCount, TimeSpan.FromSeconds(1), TimeSpan.FromSeconds(2));
             var retryPolicy = new RetryPolicy<StorageTransientErrorDetectionStrategy>(retryStrategy);
 
-            // Do some work that may result in a transient fault.  
             try
             {
                 retryPolicy.ExecuteAction(() =>
@@ -103,19 +81,16 @@ namespace Framework.Common.Features
                     }
                 });
             }
-            catch (Exception ex)
-            {
-                //Logger.Error(ex, $"{GetType().FullName} / {MethodBase.GetCurrentMethod().Name}");
-            }
+            catch (Exception ex) { }
+
             return cachedData;
         }
 
         public void Remove(string key)
         {
-            var retryStrategy = new Incremental(5, TimeSpan.FromSeconds(1), TimeSpan.FromSeconds(2));
+            var retryStrategy = new Incremental(_retryCount, TimeSpan.FromSeconds(1), TimeSpan.FromSeconds(2));
             var retryPolicy = new RetryPolicy<StorageTransientErrorDetectionStrategy>(retryStrategy);
 
-            // Do some work that may result in a transient fault.  
             try
             {
                 retryPolicy.ExecuteAction(() =>
@@ -124,10 +99,7 @@ namespace Framework.Common.Features
                     database.KeyDelete(key);
                 });
             }
-            catch (Exception ex)
-            {
-                //Logger.Error(ex, $"{GetType().FullName} / {MethodBase.GetCurrentMethod().Name}");
-            }
+            catch (Exception ex) { }
         }
 
         public void Dispose()
