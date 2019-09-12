@@ -1,0 +1,462 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6584033F-0AC5-4CB8-829C-883147E07FD1}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SC.Test</RootNamespace>
+    <AssemblyName>SC.Test</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Sitecore.Client, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Components\Sitecore.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Kernel, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Components\Sitecore.Kernel.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Logging, Version=1.2.0.30715, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Components\Sitecore.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Mvc, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Components\Sitecore.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="sitecore.nexus, Version=1.0.0.4404, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Components\sitecore.nexus.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Services.Client, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Components\Sitecore.Services.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MySitecore.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\Commands.config">
+      <Link>App_Config\Commands.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\ConnectionStrings.config">
+      <Link>App_Config\ConnectionStrings.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\ConnectionStringsOracle.config">
+      <Link>App_Config\ConnectionStringsOracle.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\FieldTypes.config">
+      <Link>App_Config\FieldTypes.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\Icons.config">
+      <Link>App_Config\Icons.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\Include\001.Sitecore.Speak.Important.config">
+      <Link>App_Config\Include\001.Sitecore.Speak.Important.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\Include\Hydra.Pipelines.config">
+      <Link>App_Config\Include\Hydra.Pipelines.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\Include\Hydra.Sites.config">
+      <Link>App_Config\Include\Hydra.Sites.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\Include\Sitecore.Analytics.Automation.TimeoutProcessing.config">
+      <Link>App_Config\Include\Sitecore.Analytics.Automation.TimeoutProcessing.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\Include\Sitecore.Analytics.Compatibility.config">
+      <Link>App_Config\Include\Sitecore.Analytics.Compatibility.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\Include\Sitecore.Analytics.config">
+      <Link>App_Config\Include\Sitecore.Analytics.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\Include\Sitecore.Analytics.ExcludeRobots.config">
+      <Link>App_Config\Include\Sitecore.Analytics.ExcludeRobots.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\Include\Sitecore.Analytics.MarketingTaxonomy.config">
+      <Link>App_Config\Include\Sitecore.Analytics.MarketingTaxonomy.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\Include\Sitecore.Analytics.Model.config">
+      <Link>App_Config\Include\Sitecore.Analytics.Model.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\Include\Sitecore.Analytics.MongoDb.config">
+      <Link>App_Config\Include\Sitecore.Analytics.MongoDb.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\Include\Sitecore.Analytics.Outcome.config">
+      <Link>App_Config\Include\Sitecore.Analytics.Outcome.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\Include\Sitecore.Analytics.Processing.Aggregation.config">
+      <Link>App_Config\Include\Sitecore.Analytics.Processing.Aggregation.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\Include\Sitecore.Analytics.Processing.Aggregation.ProcessingPools.config">
+      <Link>App_Config\Include\Sitecore.Analytics.Processing.Aggregation.ProcessingPools.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\Include\Sitecore.Analytics.Processing.Aggregation.Services.config">
+      <Link>App_Config\Include\Sitecore.Analytics.Processing.Aggregation.Services.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\Include\Sitecore.Analytics.Processing.config">
+      <Link>App_Config\Include\Sitecore.Analytics.Processing.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\Include\Sitecore.Analytics.Processing.Services.config">
+      <Link>App_Config\Include\Sitecore.Analytics.Processing.Services.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\Include\Sitecore.Analytics.Reporting.config">
+      <Link>App_Config\Include\Sitecore.Analytics.Reporting.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\Include\Sitecore.Analytics.Tracking.Aggregation.config">
+      <Link>App_Config\Include\Sitecore.Analytics.Tracking.Aggregation.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\Include\Sitecore.Analytics.Tracking.config">
+      <Link>App_Config\Include\Sitecore.Analytics.Tracking.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\Include\Sitecore.Analytics.Tracking.Database.config">
+      <Link>App_Config\Include\Sitecore.Analytics.Tracking.Database.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\Include\Sitecore.Analytics.Tracking.Outcome.config">
+      <Link>App_Config\Include\Sitecore.Analytics.Tracking.Outcome.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\Include\Sitecore.Analytics.Tracking.RobotDetection.config">
+      <Link>App_Config\Include\Sitecore.Analytics.Tracking.RobotDetection.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\Include\Sitecore.AntiCsrf.config">
+      <Link>App_Config\Include\Sitecore.AntiCsrf.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\Include\Sitecore.Apps.TagInjection.config">
+      <Link>App_Config\Include\Sitecore.Apps.TagInjection.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\Include\Sitecore.Buckets.config">
+      <Link>App_Config\Include\Sitecore.Buckets.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\Include\Sitecore.ContentSearch.Analytics.config">
+      <Link>App_Config\Include\Sitecore.ContentSearch.Analytics.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\Include\Sitecore.ContentSearch.config">
+      <Link>App_Config\Include\Sitecore.ContentSearch.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\Include\Sitecore.ContentSearch.DefaultConfigurations.config">
+      <Link>App_Config\Include\Sitecore.ContentSearch.DefaultConfigurations.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\Include\Sitecore.ContentSearch.Lucene.DefaultIndexConfiguration.config">
+      <Link>App_Config\Include\Sitecore.ContentSearch.Lucene.DefaultIndexConfiguration.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\Include\Sitecore.ContentSearch.Lucene.Index.Analytics.config">
+      <Link>App_Config\Include\Sitecore.ContentSearch.Lucene.Index.Analytics.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\Include\Sitecore.ContentSearch.Lucene.Index.Core.config">
+      <Link>App_Config\Include\Sitecore.ContentSearch.Lucene.Index.Core.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\Include\Sitecore.ContentSearch.Lucene.Index.Master.config">
+      <Link>App_Config\Include\Sitecore.ContentSearch.Lucene.Index.Master.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\Include\Sitecore.ContentSearch.Lucene.Index.Web.config">
+      <Link>App_Config\Include\Sitecore.ContentSearch.Lucene.Index.Web.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\Include\Sitecore.Diagnostics.config">
+      <Link>App_Config\Include\Sitecore.Diagnostics.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\Include\Sitecore.ExperienceEditor.config">
+      <Link>App_Config\Include\Sitecore.ExperienceEditor.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\Include\Sitecore.ExperienceEditor.Speak.Requests.config">
+      <Link>App_Config\Include\Sitecore.ExperienceEditor.Speak.Requests.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\Include\Sitecore.ExperienceExplorer.config">
+      <Link>App_Config\Include\Sitecore.ExperienceExplorer.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\Include\Sitecore.ExperienceExplorer.Speak.Requests.config">
+      <Link>App_Config\Include\Sitecore.ExperienceExplorer.Speak.Requests.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\Include\Sitecore.ItemWebApi.config">
+      <Link>App_Config\Include\Sitecore.ItemWebApi.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\Include\Sitecore.JSNLog.config">
+      <Link>App_Config\Include\Sitecore.JSNLog.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\Include\Sitecore.LanguageFallback.config">
+      <Link>App_Config\Include\Sitecore.LanguageFallback.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\Include\Sitecore.Marketing.Client.config">
+      <Link>App_Config\Include\Sitecore.Marketing.Client.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\Include\Sitecore.Marketing.config">
+      <Link>App_Config\Include\Sitecore.Marketing.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\Include\Sitecore.Marketing.Definitions.MarketingAssets.Repositories.config">
+      <Link>App_Config\Include\Sitecore.Marketing.Definitions.MarketingAssets.Repositories.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\Include\Sitecore.Marketing.Definitions.MarketingAssets.Repositories.Lucene.Index.Master.config">
+      <Link>App_Config\Include\Sitecore.Marketing.Definitions.MarketingAssets.Repositories.Lucene.Index.Master.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\Include\Sitecore.Marketing.Definitions.MarketingAssets.Repositories.Lucene.Index.Web.config">
+      <Link>App_Config\Include\Sitecore.Marketing.Definitions.MarketingAssets.Repositories.Lucene.Index.Web.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\Include\Sitecore.Marketing.Definitions.MarketingAssets.Repositories.Lucene.IndexConfiguration.config">
+      <Link>App_Config\Include\Sitecore.Marketing.Definitions.MarketingAssets.Repositories.Lucene.IndexConfiguration.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\Include\Sitecore.Marketing.Lucene.Index.Master.config">
+      <Link>App_Config\Include\Sitecore.Marketing.Lucene.Index.Master.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\Include\Sitecore.Marketing.Lucene.Index.Web.config">
+      <Link>App_Config\Include\Sitecore.Marketing.Lucene.Index.Web.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\Include\Sitecore.Marketing.Lucene.IndexConfiguration.config">
+      <Link>App_Config\Include\Sitecore.Marketing.Lucene.IndexConfiguration.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\Include\Sitecore.Marketing.Search.config">
+      <Link>App_Config\Include\Sitecore.Marketing.Search.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\Include\Sitecore.Media.RequestProtection.config">
+      <Link>App_Config\Include\Sitecore.Media.RequestProtection.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\Include\Sitecore.Mvc.config">
+      <Link>App_Config\Include\Sitecore.Mvc.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\Include\Sitecore.MvcAnalytics.config">
+      <Link>App_Config\Include\Sitecore.MvcAnalytics.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\Include\Sitecore.MvcExperienceEditor.config">
+      <Link>App_Config\Include\Sitecore.MvcExperienceEditor.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\Include\Sitecore.MvcSimulator.config">
+      <Link>App_Config\Include\Sitecore.MvcSimulator.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\Include\Sitecore.PathAnalyzer.Client.config">
+      <Link>App_Config\Include\Sitecore.PathAnalyzer.Client.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\Include\Sitecore.PathAnalyzer.config">
+      <Link>App_Config\Include\Sitecore.PathAnalyzer.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\Include\Sitecore.PathAnalyzer.Processing.config">
+      <Link>App_Config\Include\Sitecore.PathAnalyzer.Processing.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\Include\Sitecore.PathAnalyzer.Services.config">
+      <Link>App_Config\Include\Sitecore.PathAnalyzer.Services.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\Include\Sitecore.PathAnalyzer.StorageProviders.config">
+      <Link>App_Config\Include\Sitecore.PathAnalyzer.StorageProviders.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\Include\Sitecore.Processing.config">
+      <Link>App_Config\Include\Sitecore.Processing.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\Include\Sitecore.SegmentBuilder.config">
+      <Link>App_Config\Include\Sitecore.SegmentBuilder.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\Include\Sitecore.Services.Client.config">
+      <Link>App_Config\Include\Sitecore.Services.Client.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\Include\Sitecore.Shell.MarketingAutomation.config">
+      <Link>App_Config\Include\Sitecore.Shell.MarketingAutomation.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\Include\Sitecore.Speak.AntiCsrf.SheerUI.config">
+      <Link>App_Config\Include\Sitecore.Speak.AntiCsrf.SheerUI.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\Include\Sitecore.Speak.Applications.config">
+      <Link>App_Config\Include\Sitecore.Speak.Applications.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\Include\Sitecore.Speak.Components.config">
+      <Link>App_Config\Include\Sitecore.Speak.Components.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\Include\Sitecore.Speak.config">
+      <Link>App_Config\Include\Sitecore.Speak.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\Include\Sitecore.Speak.ItemWebApi.config">
+      <Link>App_Config\Include\Sitecore.Speak.ItemWebApi.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\Include\Sitecore.Speak.LaunchPad.config">
+      <Link>App_Config\Include\Sitecore.Speak.LaunchPad.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\Include\Sitecore.Speak.Mvc.config">
+      <Link>App_Config\Include\Sitecore.Speak.Mvc.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\Include\Sitecore.WebDAV.config">
+      <Link>App_Config\Include\Sitecore.WebDAV.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\Include\Sitecore.Xdb.config">
+      <Link>App_Config\Include\Sitecore.Xdb.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\LanguageDefinitions.config">
+      <Link>App_Config\LanguageDefinitions.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\log4net.config">
+      <Link>App_Config\log4net.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\MimeTypes.config">
+      <Link>App_Config\MimeTypes.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\Portraits.config">
+      <Link>App_Config\Portraits.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\Prefetch\Common.config">
+      <Link>App_Config\Prefetch\Common.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\Prefetch\Core.config">
+      <Link>App_Config\Prefetch\Core.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\Prefetch\Master.config">
+      <Link>App_Config\Prefetch\Master.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\Prefetch\Webdb.config">
+      <Link>App_Config\Prefetch\Webdb.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\Prototypes.config">
+      <Link>App_Config\Prototypes.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\Security\Domains.config">
+      <Link>App_Config\Security\Domains.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\Security\GlobalRoles.config">
+      <Link>App_Config\Security\GlobalRoles.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\Sitecore.config">
+      <Link>App_Config\Sitecore.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\inetpub\wwwroot\HydraCms\Website\App_Config\XamlSharp.config">
+      <Link>App_Config\XamlSharp.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Components\Sitecore.Client.dll" />
+    <Content Include="Components\Sitecore.Kernel.dll" />
+    <Content Include="Components\Sitecore.Logging.dll" />
+    <Content Include="Components\Sitecore.Mvc.dll" />
+    <Content Include="Components\sitecore.nexus.dll" />
+    <Content Include="Components\Sitecore.Services.Client.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
